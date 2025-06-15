@@ -1,4 +1,4 @@
-# Name Detector - Avatar Generator
+# Name Avatar - Avatar Generator
 
 A simple and elegant web application that generates personalized avatars based on user names and gender selection.
 
