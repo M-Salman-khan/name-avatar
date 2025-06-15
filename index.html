@@ -1,38 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair Display" rel="stylesheet">
-    <link rel="shortcut icon" href="icon.png">
-    <title>Let's check your personality</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name_Avatar</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            width: 100dvw;
+            height: 100dvh;
+            display: flex;
+            background: linear-gradient(135deg, #1e1b4b, #312e81, #3730a3);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            max-width: 500px;
+            width: 40%;
+            gap: 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .card .image {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+        }
+
+        .card .image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        input[type="text"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        button {
+            background-color: transparent;
+            font-size: 14px;
+            color: white;
+            padding: 5px 14px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            transition-duration: 0.3s;
+            cursor: pointer;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Gender {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .selection {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .selection div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="radio"]:checked +{
+            border-color: #6366f1;
+            background: #6366f1;
+        }
+
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 
 <body>
-    <section>
-        <h1>WHAT DOES YOUR NAME SAY ABOUT YOUR PERSONALITY?</h1><br><br>
-        <div class="centerDiv">
-            <div class="details">
-                <label>ENTER YOUR NAME</label><br><br>
-                <input type="text" name="" id="nameid">
-            </div>
 
-            <div class="imgdiv">
-                <img src="img.png" width="200" height=150 class="imgchange">
-            </div>
-
-            <button>Click Me</button>
-
+    <div class="card">
+        <h2>Name to Avatar </h2>
+        <div class="name">
+            <label for="name">Enter your Name</label><br>
+            <input type="text" id="name" placeholder="Type your name here..." required>
         </div>
-    </section>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <script src="script.js">
-
+        <div class="Gender">
+            <label for="gender">Select your Gender :</label>
+            <div class="selection">
+                <div class="boy">
+                    <input type="radio" id="boy" name="gender" required>
+                    <label for="boy">Boy</label>
+                </div>
+                <div class="girl">
+                    <input type="radio" id="girl" name="gender" required>
+                    <label for="girl">Girl</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button onclick="handleGenerateAvatar()">Generate Avatar</button>
+        </div>
+        <div class="image">
+            <img class="avatarImg" src="" alt="Avatar will appear here" hidden />
+        </div>
+    </div>
+    <script>
+        const handleGenerateAvatar = () => {
+            gender = document.querySelector("input[name=gender]:checked").id
+            name = document.querySelector("#name").value.trim()
+            img = document.querySelector(".avatarImg")
+            if (name && gender) {
+                imgUrl = `https://avatar.iran.liara.run/public/${gender}?username=${name}`;
+                img.src = imgUrl;
+                img.hidden = false;
+            } else {
+                alert("Please enter name and select gender.");
+                img.hidden = true;
+            }
+        }
     </script>
-
 </body>
 
 </html>
