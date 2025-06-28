@@ -1,6 +1,7 @@
-# Name Avatar - Avatar Generator
 
-A simple and elegant web application that generates personalized avatars based on user names and gender selection.
+# 🎨 Name Avatar - Flask Based Avatar Generator
+
+A simple and elegant **Flask web application** that generates personalized avatars based on user names and gender selection.
 
 ## 🌟 Features
 
@@ -8,27 +9,34 @@ A simple and elegant web application that generates personalized avatars based o
 - Gender-specific avatar generation
 - Clean and modern UI with a dark theme
 - Responsive design
-- Real-time avatar preview
-
-## 🚀 Live Demo
-
-Visit the live demo: [Name avatar](https://m-salman-khan.github.io/name-detector/)
+- Real-time avatar preview using Flask backend
 
 ## 🛠️ Technologies Used
 
+- Flask (Python)
 - HTML5
 - CSS3
 - JavaScript
 - [Avatar API](https://avatar.iran.liara.run/)
 
-## 💻 How to Use
+---
 
-1. Enter your name in the input field
-2. Select your gender (Boy/Girl)
-3. Click the "Generate Avatar" button
-4. Your personalized avatar will appear below
+## 📂 Project Structure
+```text
+my_flask_app/
+│
+├── app/
+│   ├── static/           # CSS and JS files
+│   └── templates/        # HTML files
+│       └── index.html
+│
+├── .gitignore
+├── main.py               # Flask entry point
+└── requirements.txt      # Python dependencies
+```
+---
 
-## 📦 Installation
+## 🚀 How to Run Locally
 
 1. Clone the repository:
 ```bash
@@ -40,9 +48,39 @@ git clone https://github.com/M-Salman-khan/name-avatar.git
 cd name-avatar
 ```
 
-3. Open `index.html` in your web browser
+3. (Optional) Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
 
-## 🎨 Features
+4. Install dependencies:
+```bash
+pip install flask
+```
+
+5. Run the Flask application:
+```bash
+python main.py
+```
+
+6. Open your browser and go to:
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 💻 How to Use
+
+1. Enter your name in the input field.
+2. Select your gender (Boy/Girl).
+3. Click the "Generate Avatar" button.
+4. Your personalized avatar will appear below.
+
+---
+
+## 🎨 UI Features
 
 - Modern gradient background
 - Glassmorphism design elements
@@ -50,20 +88,21 @@ cd name-avatar
 - Responsive layout for all screen sizes
 - User-friendly interface
 
+---
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/M-Salman-khan/name-avatar/issues).
+
+---
 
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
+---
+
 ## 👨‍💻 Author
 
-**M Salman Khan**
+**M Salman Khan**  
 - GitHub: [@M-Salman-khan](https://github.com/M-Salman-khan)
-
-## 🙏 Acknowledgments
-
-- Avatar generation powered by [Avatar API](https://avatar.iran.liara.run/)
-- Inspired by modern web design trends 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name_Avatar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Name to Avatar </h2>
+        <div class="name">
+            <label for="name">Enter your Name</label><br>
+            <input type="text" id="name" placeholder="Type your name here..." required>
+        </div>
+        <div class="Gender">
+            <label for="gender">Select your Gender :</label>
+            <div class="selection">
+                <div class="boy">
+                    <input type="radio" id="boy" name="gender" required>
+                    <label for="boy">Boy</label>
+                </div>
+                <div class="girl">
+                    <input type="radio" id="girl" name="gender" required>
+                    <label for="girl">Girl</label>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button onclick="handleGenerateAvatar()">Generate Avatar</button>
+        </div>
+        <div class="image">
+            <img class="avatarImg" src="" alt="Avatar will appear here" hidden />
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
