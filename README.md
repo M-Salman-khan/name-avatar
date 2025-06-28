@@ -80,6 +80,14 @@ http://127.0.0.1:5000
 
 ---
 
+## 📸 Demo
+
+Here's a preview of the application:
+
+![App Demo](static/images/demo.png)
+
+---
+
 ## 🎨 UI Features
 
 - Modern gradient background
