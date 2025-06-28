@@ -27,15 +27,20 @@ A simple and elegant **Flask web application** that generates personalized avata
 
 ## 📂 Project Structure
 ```text
-my_flask_app/
+name-avatar/
 │
-├── app/
-│   ├── static/           # CSS and JS files
-│   └── templates/        # HTML files
-│       └── index.html
+├── static/               # Static files (CSS, JS, Images)
+│   ├── images/
+│   │   └── demo.png
+│   ├── script.js
+│   └── styles.css
 │
-├── .gitignore
+├── templates/            # HTML templates
+│   └── index.html
+│
+├── .gitignore            # Git ignore file
 ├── main.py               # Flask entry point
+├── README.md             # Project documentation
 └── requirements.txt      # Python dependencies
 ```
 ---
